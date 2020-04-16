@@ -7,16 +7,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.*;
 
-//import javax.swing.JDesktopPane;
-//import javax.swing.JFrame;
-//import javax.swing.JInternalFrame;
-//import javax.swing.JMenu;
-//import javax.swing.JMenuBar;
-//import javax.swing.JMenuItem;
-//import javax.swing.SwingUtilities;
-//import javax.swing.UIManager;
-//import javax.swing.UnsupportedLookAndFeelException;
-
 import log.Logger;
 
 /**
@@ -153,7 +143,6 @@ public class MainApplicationFrame extends JFrame
             JMenuItem addExitItem = new JMenuItem("Выйти из игры", KeyEvent.VK_E);
             addExitItem.addActionListener((event) -> {
                 this.closeWindow();
-                //this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
             });
             exitMenu.add(addExitItem);
         }
@@ -169,16 +158,10 @@ public class MainApplicationFrame extends JFrame
         String[] options = { "Да", "Нет"};
         String message = "Вы действительно хотите закрыть приложение?";
         String title = "Закрыть?";
-        //JOptionPane.showOptionDialog(this.getContentPane(), message, title, 0,JOptionPane.INFORMATION_MESSAGE,null,options,null);
-        /*if (javax.swing.JOptionPane.showConfirmDialog(this,
-                message, title,
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }*/
         if (javax.swing.JOptionPane.showOptionDialog(this, message, title, 0,
                 JOptionPane.INFORMATION_MESSAGE, null, options, null)
                 == JOptionPane.YES_OPTION) {
+            System.out.println(System.getProperty("user.home"));
             System.exit(0);
         }
     }
